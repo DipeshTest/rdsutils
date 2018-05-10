@@ -16,7 +16,7 @@ type MyActivity struct {
 	metadata *activity.Metadata
 }
 
-var log = logger.GetLogger("activity-twitterpublish")
+var log = logger.GetLogger("activity-rdsutils")
 
 // NewActivity creates a new activity
 func NewActivity(metadata *activity.Metadata) activity.Activity {
@@ -38,8 +38,7 @@ func (a *MyActivity) Eval(context activity.Context) (done bool, err error) {
 	operation := s.TrimSpace(context.GetInput("operation").(string))
 	rdsDBInstanceIdentifier := s.TrimSpace(context.GetInput("rdsDBInstanceIdentifier").(string))
 
-	//	twitterFunction := context.GetInput("twitterFunction").(string)
-	//fmt.Println("test ", twitterFunction)
+	
 	if len(accessKeyId) == 0 {
 
 		context.SetOutput("statusCode", "101")
