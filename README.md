@@ -74,7 +74,7 @@ Note -
 1. If "dBSnapshotIdentifier" is blank in case of StopRdsInstance and DeleteRdsInstance then no snapshot will be created.
 1. Use StartDBInstanceOutput , StopDBInstanceOutput , RebootDBInstanceOutput and  DeleteDBInstanceOutput structs from aws-sdk-go
 1. Packages Used:
-	1. aws-sdk-go. Please refer link - https://docs.aws.amazon.com/sdk-for-go/api/aws/ 	   
+	* aws-sdk-go. Please refer link - https://docs.aws.amazon.com/sdk-for-go/api/aws/ 	   
 
  
 
