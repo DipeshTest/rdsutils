@@ -14,6 +14,10 @@ This activity comes out of the box with the Flogo Web UI
 flogo add activity github.com/DipeshTest/rdsutils
 ```
 
+### Third-party libraries used
+- #### aws-sdk-go:
+	Package aws provides the core SDK's utilities and shared types. Use this package's utilities to simplify setting and reading API operations parameters. Please refer link - https://docs.aws.amazon.com/sdk-for-go/api/aws/
+
 ## Schema
 Inputs and Outputs:
 
@@ -72,9 +76,7 @@ Inputs and Outputs:
 
 Note - 
 1. If "dBSnapshotIdentifier" is blank in case of StopRdsInstance and DeleteRdsInstance then no snapshot will be created.
-1. Use StartDBInstanceOutput , StopDBInstanceOutput , RebootDBInstanceOutput and  DeleteDBInstanceOutput structs from aws-sdk-go
-1. Packages Used:
-	* aws-sdk-go. Please refer link - https://docs.aws.amazon.com/sdk-for-go/api/aws/ 	   
+1. Use StartDBInstanceOutput , StopDBInstanceOutput , RebootDBInstanceOutput and  DeleteDBInstanceOutput structs from aws-sdk-go 	   
 
  
 
