@@ -3,8 +3,8 @@ title: AWS RDS Services
 weight: 1
 ---
 
-# Counter
-This activity allows you Start,Stop,Reboot and Delete specicfied AWS RDS Instance
+# AWS RDS Services
+This activity allows you to Start, Stop, Reboot and Delete specicfied AWS RDS Instance
 
 ## Installation
 ### Flogo Web
@@ -18,6 +18,7 @@ flogo install github.com/DipeshTest/rdsutils
 - #### aws-sdk-go:
 	Package aws provides the core SDK's utilities and shared types. This package's utilities are used to simplify setting and reading API operations parameters. For more details, visit - https://docs.aws.amazon.com/sdk-for-go/api/aws/
 
+	
 ## Schema
 Inputs and Outputs:
 
