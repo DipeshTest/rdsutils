@@ -1,62 +1,49 @@
 {
- "name": "AWS RDS Utilities",
- "version": "0.0.1",
- "type": "flogo:activity",
- "ref": "github.com/DipeshTest/rdsutils",
- "description": "This activity allows you Start,Stop,Reboot and Delete specicfied RDS Instance",
- "author": "AllStars",
- "inputs":[
-   {
-"name": "accessKeyId",
-"type": "string",
-   "required": true
-},
-{
-"name": "secretAccessKey",
-"type": "string",
-     "required": true
-
-},
-{
-  "name": "region",
-"type": "string",
-     "required": true
-
-},
-{
-"name": "operation",
-"type": "string",
-"allowed": [
-    "StartRdsInstance",
-    "StopRdsInstance",
-    "RebootRdsInstance",
-    "DeleteRdsInstance"
-  ],
-     "required": true
-
-},
-{
-  "name": "rdsDBInstanceIdentifier",
-"type": "string",
-     "required": true
-
-},
-{
-  "name": "dBSnapshotIdentifier",
-"type": "string"
-
-
-}
-
- ],
- "outputs": [
-   {
-     "name": "statusCode",
-     "type": "string"
-   },
-   {
-     "name": "message",
-     "type": "any"
-   }
- ]
+	"name": "AWS RDS Services",
+	"version": "0.0.1",
+	"type": "flogo:activity",
+	"ref": "github.com/DipeshTest/rdsutils",
+	"description": "This activity allows you Start,Stop,Reboot and Delete specicfied RDS Instance",
+	"author": "AllStars",
+	"inputs": [{
+		"name": "accessKeyId",
+		"type": "string",
+		"required": true
+	},
+	{
+		"name": "secretAccessKey",
+		"type": "string",
+		"required": true
+	},
+	{
+		"name": "region",
+		"type": "string",
+		"required": true
+	},
+	{
+		"name": "operation",
+		"type": "string",
+		"allowed": ["StartRdsInstance",
+		"StopRdsInstance",
+		"RebootRdsInstance",
+		"DeleteRdsInstance"],
+		"required": true
+	},
+	{
+		"name": "rdsDBInstanceIdentifier",
+		"type": "string",
+		"required": true
+	},
+	{
+		"name": "dBSnapshotIdentifier",
+		"type": "string"
+	}],
+	"outputs": [{
+		"name": "statusCode",
+		"type": "string"
+	},
+	{
+		"name": "message",
+		"type": "any"
+	}]
 }

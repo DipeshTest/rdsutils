@@ -1,103 +1,81 @@
 ---
-title: List GDrive Files
+title: AWS RDS Services
 weight: 1
 ---
 
 # Counter
-This activity lists the files from Gdrive account.
+This activity allows you Start,Stop,Reboot and Delete specicfied AWS RDS Instance
 
 ## Installation
 ### Flogo Web
 This activity comes out of the box with the Flogo Web UI
 ### Flogo CLI
 ```bash
-flogo add activity github.com/DipeshTest/gdrivelist
+flogo add activity github.com/DipeshTest/rdsutils
 ```
 
 ## Schema
 Inputs and Outputs:
 
 ```json
-"inputs":[
-    {
-		"name": "accessToken",
+ "inputs": [{
+		"name": "accessKeyId",
 		"type": "string",
-    "required": true
+		"required": true
 	},
 	{
-		"name": "fileName",
-		"type": "string"
-
+		"name": "secretAccessKey",
+		"type": "string",
+		"required": true
 	},
 	{
-		"name": "orderBy",
+		"name": "region",
 		"type": "string",
-    "allowed": [
-        "createdTime",
-        "modifiedByMeTime",
-        "modifiedTime",
-        "name",
-        "recency",
-        "starred",
-        "viewedByMeTime",
-        "sharedWithMeTime",
-        "quotaBytesUsed"
-      ]
-
+		"required": true
 	},
-  {
-		"name": "pageSize",
-		"type": "int",
-    "value": 50
-
+	{
+		"name": "operation",
+		"type": "string",
+		"allowed": ["StartRdsInstance",
+		"StopRdsInstance",
+		"RebootRdsInstance",
+		"DeleteRdsInstance"],
+		"required": true
 	},
-  {
-		"name": "nextPageToken",
+	{
+		"name": "rdsDBInstanceIdentifier",
+		"type": "string",
+		"required": true
+	},
+	{
+		"name": "dBSnapshotIdentifier",
 		"type": "string"
-
+	}],
+ "outputs": [{
+		"name": "statusCode",
+		"type": "string"
 	},
-  {
-		"name": "timeout",
-		"type": "string",
-    "value": "120"
-
-	}
-
-  ],
-  "outputs": [
-    {
-      "name": "statusCode",
-      "type": "string"
-    },
-    {
-      "name": "message",
-      "type": "any"
-    },
-    {
-      "name": "fileCount",
-      "type": "int"
-    },
-    {
-      "name": "nextPageToken",
-      "type": "string"
-    }
-  ]
-}
+	{
+		"name": "message",
+		"type": "any"
+	}]
 ```
 ## Settings
 | Setting     | Required | Description |
 |:------------|:---------|:------------|
-| accessToken | True     | The access token for your account |         
-| fileName   | False    | Name of the file to search |
-| orderBy    | False     | Key to sort list of files |  
-| pageSize   | False     | The maximum number of files to return per page |
-| nextPageToken | False  | The token for continuing a previous list request on the next page. This should be set to the value of 'nextPageToken' from the previous response | 
-| timeout       | False    | Timeout value for the delete call, default value is 120 seconds|
+| accessKeyId | True     | Access Key ID for your AWS acount , Use link :  https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html |         
+| secretAccessKey   | True    |Secret Access Key for your AWS acount , Use link :  https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html |
+| region    | True     | Regions and Availability Zones for AWS , Check link : https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html|  
+| operation   | True     | Operation that you want to perform on the specicfied aws rds instance |
+| rdsDBInstanceIdentifier   | True     | Name of the rds db instance |
+| dBSnapshotIdentifier   | False     | Name of the snapshot that you want to create in case of  StopRdsInstance and DeleteRdsInstance. |
+
+Note - 1. If "dBSnapshotIdentifier" is blank in case of StopRdsInstance and DeleteRdsInstance then no snapshot will be created.
+       2. Use StartDBInstanceOutput , StopDBInstanceOutput , RebootDBInstanceOutput and  DeleteDBInstanceOutput structs from aws-sdk-go
+       3. We have used packages from aws-sdk-go. Please refer link - https://docs.aws.amazon.com/sdk-for-go/api/aws/ 	   
+
+ 
+
 
 ## Examples
-### Increment
-The below example for a sample delete:
-
-```json
-
-```
+Please refer activity_test.go 
