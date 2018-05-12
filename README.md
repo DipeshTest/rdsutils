@@ -71,9 +71,9 @@ Inputs and Outputs:
 | dBSnapshotIdentifier   | False     | Name of the snapshot that you want to create in case of  StopRdsInstance and DeleteRdsInstance. |
 
 Note - 
-- #### If "dBSnapshotIdentifier" is blank in case of StopRdsInstance and DeleteRdsInstance then no snapshot will be created.
-- #### Use StartDBInstanceOutput , StopDBInstanceOutput , RebootDBInstanceOutput and  DeleteDBInstanceOutput structs from aws-sdk-go
-- #### We have used packages from aws-sdk-go. Please refer link - https://docs.aws.amazon.com/sdk-for-go/api/aws/ 	   
+1. If "dBSnapshotIdentifier" is blank in case of StopRdsInstance and DeleteRdsInstance then no snapshot will be created.
+1. Use StartDBInstanceOutput , StopDBInstanceOutput , RebootDBInstanceOutput and  DeleteDBInstanceOutput structs from aws-sdk-go
+1. We have used packages from aws-sdk-go. Please refer link - https://docs.aws.amazon.com/sdk-for-go/api/aws/ 	   
 
  
 
