@@ -81,7 +81,7 @@ func (a *MyActivity) Eval(context activity.Context) (done bool, err error) {
 
 		case "StopRdsInstance":
 			{
-				//skipSnapshot := context.GetInput("skipSnapshot").(bool)
+				
 				dBSnapshotIdentifier := s.TrimSpace(context.GetInput("dBSnapshotIdentifier").(string))
 				stopDbInstnceRequest := &rds.StopDBInstanceInput{}
 
@@ -95,7 +95,7 @@ func (a *MyActivity) Eval(context activity.Context) (done bool, err error) {
 					stopDbInstnceRequest = &rds.StopDBInstanceInput{
 						DBInstanceIdentifier: aws.String(rdsDBInstanceIdentifier),
 					}
-					//	code, msg = awsrds.StopRdsInstance(accessKeyId, secretAccessKey, region, stopDbInstnceRequest)
+					
 
 				}
 
