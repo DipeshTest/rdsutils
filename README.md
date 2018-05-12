@@ -11,12 +11,12 @@ This activity allows you Start,Stop,Reboot and Delete specicfied AWS RDS Instanc
 This activity comes out of the box with the Flogo Web UI
 ### Flogo CLI
 ```bash
-flogo add activity github.com/DipeshTest/rdsutils
+flogo install github.com/DipeshTest/rdsutils
 ```
 
 ### Third-party libraries used
 - #### aws-sdk-go:
-	Package aws provides the core SDK's utilities and shared types. Use this package's utilities to simplify setting and reading API operations parameters. Please refer link - https://docs.aws.amazon.com/sdk-for-go/api/aws/
+	Package aws provides the core SDK's utilities and shared types. This package's utilities are used to simplify setting and reading API operations parameters. For more details, visit - https://docs.aws.amazon.com/sdk-for-go/api/aws/
 
 ## Schema
 Inputs and Outputs:
