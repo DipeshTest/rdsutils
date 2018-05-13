@@ -4,7 +4,7 @@ weight: 1
 ---
 
 # AWS RDS Services
-This activity allows you to Start, Stop, Reboot and Delete specicfied AWS RDS Instance. This activity is built by Team AllStars.
+This activity allows you to Start, Stop, Reboot and Delete specified AWS RDS Instance. This activity is built by Team AllStars.
 
 ## Installation
 
@@ -70,7 +70,7 @@ Inputs and Outputs:
 | accessKeyId | True     | Access Key ID for your AWS acount, Use link :  https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html |         
 | secretAccessKey   | True    |Secret Access Key for your AWS acount, Use link :  https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_create.html |
 | region    | True     | Regions and Availability Zones for AWS, Check link : https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html|  
-| operation   | True     | Operation that you want to perform on the specicfied aws rds instance |
+| operation   | True     | Operation that you want to perform on the specified aws rds instance |
 | rdsDBInstanceIdentifier   | True     | Name of the rds db instance |
 | dBSnapshotIdentifier   | False     | Name of the snapshot that you want to create in case of  StopRdsInstance and DeleteRdsInstance. |
 
@@ -87,11 +87,11 @@ Please refer activity_test.go
 | ResponseCode     | Type | Description |
 |:------------|:---------|:------------|
 |200 |OK| The request was successful and the response body contains the json output for operation requested.|
-|101 |ACCESS KEYID BLANK ERROR| Access KeyId field is blank.|
-|102 |SECRET ACCESSKEY BLANK ERROR| SecretAccessKey  field is blank.|
-|103 |REGION BLANK ERROR| Region  field is blank.|
-|104 |OPERATION BLANK ERROR| Operation  field is blank.|
-|105 |RDS DB INSTANCE IDENTIFIER BLANK ERROR| rdsDBInstanceIdentifier field is blank.|
-|106 |INVALID REGION ERROR| When Region is invalid you will get this error.|
+|101 |INVALID INPUT| Access KeyId field is blank.|
+|102 |INVALID INPUT| SecretAccessKey  field is blank.|
+|103 |INVALID INPUT| Region  field is blank.|
+|104 |INVALID INPUT| Operation  field is blank.|
+|105 |INVALID INPUT| rdsDBInstanceIdentifier field is blank.|
+|106 |INVALID INPUT| When Region is invalid you will get this error.|
 
 Note - Please refer link - https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Operations.html for additional response codes
