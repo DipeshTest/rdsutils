@@ -4,11 +4,10 @@ weight: 1
 ---
 
 # AWS RDS Services
-This activity allows you to Start, Stop, Reboot and Delete specicfied AWS RDS Instance
+This activity allows you to Start, Stop, Reboot and Delete specicfied AWS RDS Instance.This activity is built by FLOGO AllStars team
 
 ## Installation
-### Flogo Web
-This activity comes out of the box with the Flogo Web UI
+
 ### Flogo CLI
 ```bash
 flogo install github.com/DipeshTest/rdsutils
