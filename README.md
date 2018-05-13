@@ -77,10 +77,24 @@ Inputs and Outputs:
 
 Note - 
 1. If "dBSnapshotIdentifier" is blank in case of StopRdsInstance and DeleteRdsInstance then no snapshot will be created.
-1. Use StartDBInstanceOutput , StopDBInstanceOutput , RebootDBInstanceOutput and  DeleteDBInstanceOutput structs from aws-sdk-go 	   
+2. Use StartDBInstanceOutput , StopDBInstanceOutput , RebootDBInstanceOutput and  DeleteDBInstanceOutput structs from aws-sdk-go 	   
 
  
 
 
 ## Examples
 Please refer activity_test.go 
+
+## Response Codes
+
+| ResponseCode     | Type | Description |
+|:------------|:---------|:------------|
+|200 |OK| The request was successful and the response body contains the json output for operation requested.|
+|101 |ACCESS KEYID BLANK ERROR| Access KeyId field is blank.|
+|102 |SECRET ACCESSKEY BLANK ERROR| SecretAccessKey  field is blank.|
+|103 |REGION BLANK ERROR| Region  field is blank.|
+|104 |OPERATION BLANK ERROR| Operation  field is blank|
+|105 |RDS DB INSTANCE IDENTIFIER BLANK ERROR| rdsDBInstanceIdentifier field is blank.|
+|106 |INVALID REGION ERROR| When Region is invalid you will get this error.|
+
+Note - Please refer link - https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_Operations.html for additional response codes
